@@ -1,0 +1,22 @@
+<form [formGroup]="formularioAltaCuenta" (ngSubmit)="crearCuenta()">
+  <p>IBAN</p>
+  <input type="" name="" formControlName="iban" />
+  <br>
+
+  <div class="row">
+    <div class="col-6">
+      <select class="custom-select" formControlName="usuario">
+        <option selected disabled>Usuario</option>
+        <option [value]="usuario._links.self.href"
+                *ngFor="let usuario of usuarios">{{usuario.nombre}}</option>
+      </select>
+    </div>
+  </div>
+
+  <input
+    type="submit"
+    value="Añadir Cuenta"
+    class="waves-effect green darken-1 btn btn-large"
+  />
+
+</form>
